@@ -2,4 +2,10 @@
 
 <h2>It is a <%= @pet.species %> and its color is <%= @pet.color %></h2>
 
-<%= link_to 'Back to list', pets_path %>
+<% if @pet.returned == false %>
+  <%= link_to 'Marcar como encontrado', return_pet_path(@pet), method: :patch,  class: 'btn btn-success' %>
+<% end %>
+
+<%= link_to 'Back to list', root_path %>
+
+<%= link_to 'Delete this pet', pet_path(@pet), method: :delete %>

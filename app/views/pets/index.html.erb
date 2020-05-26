@@ -1,5 +1,7 @@
 
 
+<%= link_to "Add a new cat", new_pet_path, class: 'btn btn-primary' %>
+
 <% @pets.each do |pet| %>
   <p>
     <%= link_to "#{pet.color} #{pet.species}", pet_path(pet) %>
